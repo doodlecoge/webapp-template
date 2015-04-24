@@ -80,7 +80,7 @@
     <div class="c">
         <div class="login_info">
             <sec:authorize access="isAuthenticated()">
-                <a href="javascript:;">
+                <a href="<%=cp%>/user">
                     Hi, <i class="fa fa-user"></i>
                     <sec:authentication property="principal.username"/>!
                 </a>
@@ -103,7 +103,7 @@
                 Home
             </a>
             &nbsp;
-            <a href="<%=cp%>/">
+            <a href="<%=cp%>/post">
                 <i class="fa fa-newspaper-o"></i>
                 News
             </a>
@@ -129,7 +129,9 @@
 </div>
 <div id="footer">
     <div class="c">
-        Copyright &copy; huaichao.wang since 2014.
+        Copyright &copy;
+        <a href="http://www.huaichao.wang">huaichao.wang</a>
+        since 2014.
     </div>
 </div>
 

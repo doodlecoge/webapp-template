@@ -8,22 +8,53 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String cp = request.getContextPath();
+%>
 <html>
 <head>
     <title>Users</title>
+    <style>
+        label {
+            font-weight: bold;
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .avatar {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
 </head>
 <body>
-<c:choose>
-    <c:when test="${users != null && fn:length(users) > 0}">
-        <ul>
-            <c:forEach var="user" items="${users}">
-                <li> ${user.fullname} </li>
-            </c:forEach>
-        </ul>
-    </c:when>
-    <c:otherwise>
-        no users
-    </c:otherwise>
-</c:choose>
+<p>
+    <label>Avatar Image:</label>
+    <br/>
+    <img class="avatar" src="<%=cp%>/img/no_avatar.gif">
+</p>
+
+<p>
+    <label>User Name:</label>
+    <br/>
+    <input type="text" value="${user.username}">
+</p>
+
+<p>
+    <label>Full Name:</label>
+    <br/>
+    <input type="text" value="${user.fullname}">
+</p>
+
+<p>
+    <label>Password:</label>
+    <br/>
+    <input type="password" value="${user.password}">
+</p>
+
+<p>
+    <button class="button">Update Profile</button>
+</p>
 </body>
 </html>

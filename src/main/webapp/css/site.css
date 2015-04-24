@@ -53,6 +53,13 @@ body, input, textarea, keygen, select, button {
     margin-top: 10px;
 }
 
+#footer.dock_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 input[type=text], input[type=password] {
     height: 30px;
     padding: 0 10px;
@@ -61,13 +68,13 @@ input[type=text], input[type=password] {
 
 .button {
     outline: none;
-    border:1px solid #555;
+    border: 1px solid #555;
     font-weight: bold;
     border-radius: 18px;
     padding: 0 20px;
     height: 35px;
-    text-decoration:none;
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
     color: #FFFFFF;
     background-color: #a5b8da;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
@@ -76,18 +83,20 @@ input[type=text], input[type=password] {
     background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
     background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
     background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
-    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#a5b8da, endColorstr=#7089b3);
 }
 
 .button:hover {
     text-decoration: none;
-    border:1px solid #555;
-    background-color: #819bcb; background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
+    border: 1px solid #555;
+    background-color: #819bcb;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
     background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
     background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
     background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
     background-image: -o-linear-gradient(top, #819bcb, #536f9d);
-    background-image: linear-gradient(to bottom, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+    background-image: linear-gradient(to bottom, #819bcb, #536f9d);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#819bcb, endColorstr=#536f9d);
 }
 
 .button:active {
@@ -102,6 +111,6 @@ input[type=text], input[type=password] {
     cursor: default;
     background-color: rgba(229, 229, 229, 0.5);
     background-image: none;
-    border-color:#555;
+    border-color: #555;
     box-shadow: none;
 }
