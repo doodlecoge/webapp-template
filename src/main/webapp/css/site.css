@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body, input, textarea, keygen, select, button {
+    font-size: 16px;
+    font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace, "微软雅黑", "宋体";
+}
+
+.c {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#nav {
+    line-height: 40px;
+    background: #555;
+}
+
+#nav a {
+    color: #ccc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    color: #f8f8f8;
+}
+
+#nav .menus {
+    float: left;
+}
+
+#nav .login_info {
+    float: right;
+}
+
+#header {
+    background: #69c;
+    height: 100px;
+    line-height: 100px;
+    font-size: 60px;
+    color: #fff;
+}
+
+#footer {
+    background: #ccc;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+input[type=text], input[type=password] {
+    height: 30px;
+    padding: 0 10px;
+    min-width: 350px;
+}
+
+.button {
+    outline: none;
+    border:1px solid #555;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 0 20px;
+    height: 35px;
+    text-decoration:none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    background-color: #a5b8da;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
+    background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+}
+
+.button:hover {
+    text-decoration: none;
+    border:1px solid #555;
+    background-color: #819bcb; background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
+    background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -o-linear-gradient(top, #819bcb, #536f9d);
+    background-image: linear-gradient(to bottom, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+}
+
+.button:active {
+    background-color: #69c;
+    background-image: none;
+    border-color: #555;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button.disabled {
+    color: rgba(102, 102, 102, 0.5);
+    cursor: default;
+    background-color: rgba(229, 229, 229, 0.5);
+    background-image: none;
+    border-color:#555;
+    box-shadow: none;
+}
