@@ -17,6 +17,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss
         </maven.build.timestamp.format>
         <res.dir>resources</res.dir>
+        <timestamp>${maven.build.timestamp}</timestamp>
     </properties>
 
     <dependencies>
