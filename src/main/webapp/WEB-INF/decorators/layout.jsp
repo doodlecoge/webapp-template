@@ -10,6 +10,7 @@
            prefix="decorator" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%
     String cp = request.getContextPath();
     String host = request.getServerName();
@@ -81,18 +82,18 @@
         <div class="login_info">
             <sec:authorize access="isAuthenticated()">
                 <a href="<%=cp%>/user">
-                    Hi, <i class="fa fa-user"></i>
+                    <spring:message code="menu.hi"></spring:message>, <i class="fa fa-user"></i>
                     <sec:authentication property="principal.username"/>!
                 </a>
                 <a href="<%=cp%>/logout">
                     <i class="fa fa-power-off"></i>
-                    Logout
+                    <spring:message code="menu.logout"></spring:message>
                 </a>
             </sec:authorize>
             <sec:authorize access="isAnonymous()">
                 <a href="<%=cp%>/login_page">
                     <i class="fa fa-key"></i>
-                    Login
+                    <spring:message code="menu.login"></spring:message>
                 </a>
             </sec:authorize>
         </div>
@@ -100,19 +101,13 @@
         <div class="menus">
             <a href="<%=cp%>/">
                 <i class="fa fa-home"></i>
-                Home
+                <spring:message code="menu.home"></spring:message>
             </a>
             &nbsp;
             <a href="<%=cp%>/post">
                 <i class="fa fa-newspaper-o"></i>
-                News
+                <spring:message code="menu.news"></spring:message>
             </a>
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <a href="<%=cp%>/user">
-                    <i class="fa fa-file-image-o"></i>
-                    Images
-                </a>
-            </sec:authorize>
         </div>
 
         <div style="clear: both;"></div>

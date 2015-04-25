@@ -17,16 +17,16 @@
     <context:property-placeholder location="classpath*:db.properties"/>
 
     <!--<mvc:annotation-driven>-->
-        <!--<mvc:message-converters register-defaults="true">-->
-            <!--<bean class="me.hch.aciton.ActionResultMessageConvertor">-->
-                <!--<constructor-arg>-->
-                    <!--<bean class="org.springframework.http.MediaType">-->
-                        <!--<constructor-arg index="0" value="*"/>-->
-                        <!--<constructor-arg index="1" value="*"/>-->
-                    <!--</bean>-->
-                <!--</constructor-arg>-->
-            <!--</bean>-->
-        <!--</mvc:message-converters>-->
+    <!--<mvc:message-converters register-defaults="true">-->
+    <!--<bean class="me.hch.aciton.ActionResultMessageConvertor">-->
+    <!--<constructor-arg>-->
+    <!--<bean class="org.springframework.http.MediaType">-->
+    <!--<constructor-arg index="0" value="*"/>-->
+    <!--<constructor-arg index="1" value="*"/>-->
+    <!--</bean>-->
+    <!--</constructor-arg>-->
+    <!--</bean>-->
+    <!--</mvc:message-converters>-->
     <!--</mvc:annotation-driven>-->
 
     <context:annotation-config/>
@@ -44,8 +44,35 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="10000000"/>
     </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:i18n/messages"></property>
+        <property name="defaultEncoding" value="UTF8"></property>
+    </bean>
+
+    <!--
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="zh"/>
+    </bean>
+    -->
+
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="zh"/>
+        <property name="cookieName" value="locale"></property>
+        <property name="cookieMaxAge" value="3600"></property>
+    </bean>
+
+    <bean id="localeChangeInterceptor"
+          class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang"></property>
+    </bean>
+
 
 </beans>

@@ -20,6 +20,11 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="wang.huaichao.web"/>
 
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"></property>
+        </bean>
+    </mvc:interceptors>
 
     <!--==========================================================-->
     <!-- mysql config                                             -->
@@ -33,7 +38,8 @@
         <property name="password" value="${db.password}"></property>
     </bean>
 
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="mysqlDs"></property>
         <property name="hibernateProperties">
             <props>
@@ -61,7 +67,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <tx:annotation-driven proxy-target-class="true" transaction-manager="mysqlTm"/>
+    <tx:annotation-driven proxy-target-class="true"
+                          transaction-manager="mysqlTm"/>
 
     <tx:advice id="txAdvice2" transaction-manager="mysqlTm">
         <tx:attributes>
