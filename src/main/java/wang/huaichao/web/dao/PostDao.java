@@ -1,6 +1,7 @@
 package wang.huaichao.web.dao;
 
 import org.hibernate.classic.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import wang.huaichao.RtException;
@@ -19,6 +20,7 @@ public class PostDao extends BaseDao {
     public List<Post> listAll() {
         return sessionFactory.getCurrentSession()
                 .createCriteria(Post.class)
+                .addOrder(Order.desc("updatedAt"))
                 .list();
     }
 

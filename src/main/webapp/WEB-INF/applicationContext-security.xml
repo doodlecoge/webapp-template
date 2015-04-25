@@ -13,7 +13,9 @@
         <!--<intercept-url pattern="/favicon.ico" access="permitAll"/>-->
         <intercept-url pattern="^/login_page.*" access="permitAll"/>
         <intercept-url pattern="^/" access="permitAll"/>
-        <intercept-url pattern="^/(js|css|fonts)/.*" access="permitAll"/>
+        <intercept-url pattern="^/post" access="permitAll"/>
+        <intercept-url pattern="^/post/\d+" access="permitAll"/>
+        <intercept-url pattern="^/(js|css|fonts|ckeditor)/.*" access="permitAll"/>
 
         <intercept-url pattern=".+" access="hasRole('ROLE_USER')"/>
 

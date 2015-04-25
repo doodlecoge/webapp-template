@@ -15,13 +15,6 @@
 <head>
     <title>Users</title>
     <style>
-        label {
-            font-weight: bold;
-            color: #555;
-            font-size: 18px;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
         .avatar {
             max-width: 100px;
             max-height: 100px;

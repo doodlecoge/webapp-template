@@ -36,6 +36,7 @@
     <mvc:resources mapping="/img/**" location="/img/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>
+    <mvc:resources mapping="/ckeditor/**" location="/ckeditor/"/>
 
     <!-- jsp view resolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -4,8 +4,8 @@ import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import wang.huaichao.security.UserUtils;
 import wang.huaichao.web.model.Post;
 import wang.huaichao.web.model.User;
 import wang.huaichao.web.service.PostService;
@@ -27,5 +27,44 @@ public class PostController {
         final List<Post> users = postService.listAll();
         map.put("posts", users);
         return "post/index";
+    }
+
+    @RequestMapping("/{id}")
+    public String show(@PathVariable int id, ModelMap map) {
+        final Post post = postService.retrive(id);
+        map.put("post", post);
+        return "post/show";
+    }
+
+    @RequestMapping("/new")
+    public String addPost() {
+        return "post/new";
+    }
+
+    @RequestMapping("/{id}/edit")
+    public String editPost(@PathVariable int id,
+                           ModelMap map) {
+        final Post post = postService.retrive(id);
+        map.put("post", post);
+        return "post/new";
+    }
+
+    @RequestMapping(value = "/{id}/save", method = RequestMethod.POST)
+    public String savePost(@PathVariable int id,
+                           @RequestParam String title,
+                           @RequestParam String content) {
+        if (id == 0) {
+            postService.create(title, content, UserUtils.getUsername());
+        } else {
+            postService.update(id, title, content);
+        }
+        return "redirect:/post";
+    }
+
+    @RequestMapping("/{id}/del")
+    @ResponseBody
+    public String delPost(@PathVariable int id) {
+        postService.delete(id);
+        return "{\"error\":false}";
     }
 }

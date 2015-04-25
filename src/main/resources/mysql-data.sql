@@ -1,4 +1,4 @@
-USE ssh_temp_db;
+USE webapp_template;
 
-INSERT INTO users (username, password, fullname, created_at, updated_at)
-VALUES ('huaichao', 'pass1234', 'Huaichao Wang', now(), now());
+INSERT INTO users (username, password, fullname, created_at)
+VALUES ('huaichao', 'pass1234', 'Huaichao Wang', now());
