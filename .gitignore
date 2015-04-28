@@ -3,3 +3,6 @@ target/
 *.iml
 db.properties
 ckeditor/
+highlight/
+codemirror/
+tmp/
